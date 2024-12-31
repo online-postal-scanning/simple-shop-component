@@ -12,7 +12,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.3",
-        "olps/simple-shop": "^0.0"
+        "olps/simple-shop": "^0.0",
+        "psr/container": "^1.0 || ^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^11"
