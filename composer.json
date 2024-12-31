@@ -1,0 +1,25 @@
+{
+    "name": "olps/simple-shop-component",
+    "type": "library",
+    "description": "Laminas component for Simple Shop",
+    "keywords": [
+        "laminas",
+        "component",
+        "simple-shop"
+    ],
+    "homepage": "https://github.com/Online-Postal-Scanning/simple-shop-component",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.3",
+        "olps/simple-shop": "^0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Olps\\SimpleShopComponent\\": "src/"
+        }
+    }
+}
