@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace OLPS\SimpleShopComponent;
 
 use OLPS\SimpleShop\Entity\PayumContext;
-use OLPS\SimpleShop\Factory\PayumContextFactory;
+use OLPS\SimpleShopComponent\Factory\PayumContextFactory;
 use OLPS\SimpleShop\Interactor\AuthorizeCard;
 use OLPS\SimpleShopComponent\Factory\AuthorizeCardFactory;
 

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace OLPS\SimpleShop\Factory;
+namespace OLPS\SimpleShopComponent\Factory;
 
 use ConfigValue\GatherConfigValues;
 use OLPS\SimpleShop\Entity\PayumContext;
