@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace OLPS\SimpleShopComponent\Factory\DBal;
 
 use Doctrine\DBAL\Connection;
+use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 use OLPS\SimpleShop\Interactor\DBal\DBalCommon;
 use OLPS\SimpleShop\Interactor\DBal\GatherCategoryDataForProduct;
 use OLPS\SimpleShop\Interactor\FindInvoiceByIdInterface;
@@ -18,8 +20,6 @@ use OLPS\SimpleShop\Interactor\SaveInvoiceInterface;
 use OLPS\SimpleShop\Interactor\SaveProductInterface;
 use OLPS\SimpleShop\Interactor\UpdateInvoiceInterface;
 use Psr\Container\ContainerInterface;
-use Zend\ServiceManager\AbstractFactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
 
 final class DbalCommonFactory implements AbstractFactoryInterface
 {
@@ -35,9 +35,10 @@ final class DbalCommonFactory implements AbstractFactoryInterface
     }
 
     public function canCreate(
-        ContainerInterface $container,
-        $requestedName
-    ) {
+        ContainerInterface $container, 
+        string $requestedName,
+        ): bool
+    {
         $acceptableInterfaces = [
             FindCardByIdInterface::class,
             FindCardByLastFourInterface::class,
