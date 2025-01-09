@@ -14,10 +14,8 @@ class PayumContextFactory
     // todo: set up repo
     public function __invoke(ContainerInterface $container): PayumContext
     {
-        $payum = $container->get(Payum::class);
-        if (!$payum) {
-            $payum = $this->payumFactory($container);
-        }
+        $payum = $this->payumFactory($container);
+
         return new PayumContext($payum);
     }
 
@@ -29,7 +27,15 @@ class PayumContextFactory
         foreach ($config['gateways'] as $name => $gateway) {
             $builder->addGateway($name, $gateway);
         }
-    
+
+        $builder->setTokenStorage($this->tokenStorageFactory($config['tokenStorage']));
+
+        // $builder->addStorage($modelClass, $storage);
         return $builder->getPayum();
+    }
+
+    private function tokenStorageFactory(array $config): StorageInterface
+    {
+        
     }
 }
